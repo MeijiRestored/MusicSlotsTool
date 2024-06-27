@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"/>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" lang="en"/>
+  <meta content="MusicSlots Tool" property="og:title"/>
+  <meta content="A simple in-browser editor for musicSlotsUser.ini" property="og:description"/>
+  <meta content="#ACE1AF" data-react-helmet="true" name="theme-color"/>
+  <meta content="website" property="og:type"/>
+  <meta content="assets/banner.png" property="og:image">
+  <meta content="MusicSlots Tool" name="twitter:title"/>
+  <meta
+      content="A simple in-browser editor for musicSlotsUser.ini"
+      name="twitter:description"/>
+
+  <title>MusicSlots Tool</title>
+
+  <link href="css/main.css" rel="stylesheet">
+
+  <script
+      crossorigin="anonymous"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<h1>MusicSlots Tool</h1>
+<div id="container">
+  <div class="greyBox" id="inputSection">
+    <div class="btn" id="inputLabel">Open musicSlotsUser.ini file...</div>
+    <br/>
+    <input accept=".ini" id="input" name="musicslots" type="file"/>
+  </div>
+  <div id="outputSection">
+    <h3>Select a musicSlotsUser.ini file to begin.</h3>
+  </div>
+  <hr/>
+  <div id="editor" style="display: none">
+    <div id="musicTableContainer"></div>
+    <button id="addrow" onclick="addRow()"><b>+</b> Add an entry</button>
+    <button id="save" onclick="save()"><b>Save</b></button>
+  </div>
+</div>
+<div id="blockingScreen" onclick="closePreview()">
+  <p id="hint">Click anywhere around the picture to close...</p>
+</div>
+<div id="previewBox">
+  <p id="track">Credits</p>
+  <p id="author">Author name</p>
+</div>
+<div id="infoBox">
+  <h4>Abbreviations</h4>
+  <b>NFB</b> : Normal frontrunning BPM<br>
+  <b>NFO</b> : Normal frontrunning offset<br>
+  <b>FFB</b> : Fast frontrunning BPM<br>
+  <b>FFO</b> : Fast frontrunning offset<br>
+  <h4>How to use</h4>
+  Import your <b>musicSlotsUser.ini</b> file. It is located in the <a href="https://mk3ds.com/index.php?title=MyStuff" target="_blank"><b>CTGP-7 MyStuff</b></a> folder.<br>
+  Change the values according to your needs.<br>
+  <b>Music name</b> corresponds to the name of the <b>bcstm</b> files :
+  <ul>
+    <li>STRM_C<b>MUSIC NAME</b>_N.bcstm</li>
+    <li>STRM_C<b>MUSIC NAME</b>_F.bcstm</li>
+  </ul>
+  <b>Channel type</b> is the type of channel used by the music :
+  <ul>
+    <li><b>Single</b> is the default value and used in most cases.</li>
+    <li><b>Multi water</b> is for tracks that have different music in water.</li>
+    <li><b>Multi area</b> is for tracks that have different music in specific areas.</li>
+  </ul>
+  <b>Frontrunning beats</b> are defined by NFB, NFO, etc.<br>
+  They are defined by their beats per minute (BPM) and sample offset<br>
+  (how far into the music the beats will start playing).<br>
+  They are defined for normal laps and the final (fast) lap.<br><br>
+  When you are done, save and put the saved file in the MyStuff folder.
+  <h4>About this page</h4>
+  Made in Belgium. Updated June 2024.<br>
+  <a href="https://github.com/MeijiRestored/MusicSlotsTool" target="_blank">Source code on GitHub</a>
+</div>
+<div id="infoBtn" onclick="infoToggle()">?</div>
+<script src="js/main.js" type="text/javascript"></script>
+<script src="data/tracks.js" type="text/javascript"></script>
+</body>
+</html>
