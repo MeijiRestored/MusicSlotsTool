@@ -2,7 +2,7 @@
 
 An in-browser editor for CTGP-7's `musicSlotsUser.ini`.
 
-Open it here : https://meijirestored.github.io/musicslotstool
+Open it here : https://meijirestored.github.io/MusicSlotsTool/
 
 <img src="assets/page.png" width="700" title="Main page"/>
 
